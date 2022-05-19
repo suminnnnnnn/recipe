@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-from django.http import HttpResponse
-from django.shortcuts import render
-
-def index(request):
-  return render(request, 'base.html', {})
-
-=======
-
 from django.http import HttpResponse
 from django.shortcuts import render
 
@@ -39,5 +30,3 @@ def excel(request):
   print(all_values)
   return render(request, 'excel.html', {'data': all_values})
 
-  
->>>>>>> 393fca582d85d6d71b51f40f6195d85c8ece1bfa
