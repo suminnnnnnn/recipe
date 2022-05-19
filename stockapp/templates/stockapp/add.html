@@ -1,0 +1,6 @@
+<form action='/stock/add/' method='post'>
+    재료 이름 : <input type='text' user_name='user_name'><br>
+    재료 수량 : <input type='text' amount='amount'><br>
+    {% csrf_token %}
+    <button>추가</button>
+</form>
