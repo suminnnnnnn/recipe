@@ -16,6 +16,14 @@ Including another URLconf
 from django.contrib import admin
 <<<<<<< HEAD
 from django.urls import path, include
+from recipe2 import views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('recipe2/', include('recipe2.urls')),
+=======
+<<<<<<< HEAD
+from django.urls import path, include
 =======
 from django.urls import include,path
 >>>>>>> 393fca582d85d6d71b51f40f6195d85c8ece1bfa
@@ -42,6 +50,7 @@ urlpatterns = [
     
   
 >>>>>>> 393fca582d85d6d71b51f40f6195d85c8ece1bfa
+>>>>>>> ff5ba74364b81b50bffd95530ce451a171f47209
 ]
 
 

@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -31,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'recipe2',
     'recipe',
     'mypage',
     'member',
@@ -130,9 +132,12 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+<<<<<<< HEAD
+=======
 LOGIN_REDIRECT_URL = '/member/login/'
 LOGOUT_REDIRECT_URL = '/member/login/'
 
 
 
+>>>>>>> ff5ba74364b81b50bffd95530ce451a171f47209
 
