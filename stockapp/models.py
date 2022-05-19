@@ -11,10 +11,21 @@ class Add(models.Model):
     #user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     # ingredient_id = models.ForeignKey(Ingredient, on_delete=models.CASCADE)
     #user_name = models.CharField(max_length=10, null=True)
-    stock = models.CharField(max_length=10, null=True)
+    Add_stock = models.CharField(max_length=10, null=True)
     #expiration_date = models.DateField(auto_now_add=True)
-    amount = models.IntegerField()
+    Add_amount = models.IntegerField()
 
     class Meta:
         db_table = 'Add'
         app_label = 'stockapp'
+
+class stock(models.Model):
+  stock_name = CharField(max_length=10)
+  stock_amount = CharField(max_length=20)
+  distance = FloatField()
+  time_info = CharField(max_length=10)
+  start_end_info = CharField(max_length=30)
+  cre_date = DateField()
+  class Meta:
+    db_table = 'stock'
+    managed = False
