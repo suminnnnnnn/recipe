@@ -14,10 +14,44 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+<<<<<<< HEAD
 from django.urls import path, include
 from recipe2 import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('recipe2/', include('recipe2.urls')),
+=======
+<<<<<<< HEAD
+from django.urls import path, include
+=======
+from django.urls import include,path
+>>>>>>> 393fca582d85d6d71b51f40f6195d85c8ece1bfa
+from member import views
+from .import views as config_views
+from django.conf import settings
+from django.conf.urls.static import static
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('member/',include('member.urls')),
+<<<<<<< HEAD
+
+    path('', config_views.index),
+    
+    
+    
+   
+    
+=======
+    path('home/', config_views.home),
+    path('', config_views.index),
+    path('stock/', include('stockapp.urls')),
+    
+  
+>>>>>>> 393fca582d85d6d71b51f40f6195d85c8ece1bfa
+>>>>>>> ff5ba74364b81b50bffd95530ce451a171f47209
 ]
+
+
+
