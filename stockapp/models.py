@@ -11,9 +11,9 @@ class Add(models.Model):
     #user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     # ingredient_id = models.ForeignKey(Ingredient, on_delete=models.CASCADE)
     #user_name = models.CharField(max_length=10, null=True)
-    Add_stock = models.CharField(max_length=10, null=True)
-    #expiration_date = models.DateField(auto_now_add=True)
-    Add_amount = models.IntegerField()
+    Add_stock = CharField(max_length=10, null=True)
+    Add_amount = CharField(max_length=4, null=True)
+    Add_month = CharField(max_length=20, null=True)
 
     class Meta:
         db_table = 'Add'
@@ -28,4 +28,5 @@ class stock(models.Model):
   cre_date = DateField()
   class Meta:
     db_table = 'stock'
-    managed = False
+    # managed = False
+

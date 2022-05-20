@@ -5,14 +5,13 @@ from .models import Add
 
 def add(request):
   if request.method == 'POST':
-    stock = request.POST.get('stock')
-    amount = request.POST.get('amount')
+    Add_stock = request.POST.get('Add_stock')
+    Add_amount = request.POST.get('Add_amount')
+    Add_month = request.POST.get('Add_month')
   
     
-    add = Add(stock=stock)
-    #amount = Add(amount=amount)
+    add = Add(Add_stock=Add_stock, Add_amount=Add_amount,Add_month=Add_month)
     add.save()
-    #amount.save()
 
-    return HttpResponse('재료 등록 완료')
+    return HttpResponse('재료 등록 완료') 
   return render(request, 'stockapp/add.html', {})
