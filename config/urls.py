@@ -28,6 +28,10 @@ urlpatterns = [
     path('member/',include('member.urls')),
     path('', config_views.index),
     path('stock/', include('stockapp.urls')),
+<<<<<<< HEAD
+=======
+
+>>>>>>> 44b405bdbc6366f162202610e7f05e8df1bb9dde
 
 ]
 
