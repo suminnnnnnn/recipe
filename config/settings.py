@@ -32,8 +32,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'recipe',
-    'mypage',
     'member',
+    'stockapp',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
