@@ -1,6 +1,10 @@
-<form action='/stock/add/' method='post'>
-    재료 이름 : <input type='text' user_name='user_name'><br>
-    재료 수량 : <input type='text' amount='amount'><br>
-    {% csrf_token %}
-    <button>추가</button>
+<form action="/stock/add/" method="post">
+  재료 이름 : <input type="text" name="Add_stock" /><br />
+  재료 수량 : <input type="text" name="Add_amount" /><br />
+
+<label for="Add_month">유통 기한 :</label>
+<input type="date" id="Add_month" name="Add_month"><br />
+
+  {% csrf_token %}
+  <button>추가</button>
 </form>
