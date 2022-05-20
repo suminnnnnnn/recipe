@@ -1,4 +1,5 @@
 from operator import mod
+from pickle import TRUE
 from django.db import models
 from django.db.models.fields import CharField, IntegerField, FloatField
 from django.db.models.fields import DateField
@@ -19,11 +20,10 @@ class Add(models.Model):
         db_table = 'Add'
         app_label = 'stockapp'
 
-class stock(models.Model):
-  stock_name = CharField(max_length=10)
-  stock_amount = CharField(max_length=20)
-  distance = FloatField()
-  time_info = CharField(max_length=10)
+class Stock(models.Model):
+  stock_name = CharField(max_length=10, null=True)
+  stock_amount = CharField(max_length=4, null=True)
+  stock_month = CharField(max_length=20, null=True)
   start_end_info = CharField(max_length=30)
   cre_date = DateField()
   class Meta:
