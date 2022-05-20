@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.urls import include,path
+from recipe2 import views
 from member import views
 from .import views as config_views
 from django.conf import settings
@@ -23,11 +24,11 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('recipe2/', include('recipe2.urls')),
     path('member/',include('member.urls')),
     path('', config_views.index),
     path('stock/', include('stockapp.urls')),
-    
+    path('stock/', include('stockapp.urls')),
+
 ]
-
-
 

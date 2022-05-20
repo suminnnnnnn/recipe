@@ -1,0 +1,19 @@
+<body>
+    <h1>냉장고 안 재료</h1>
+    <h3>{% csrf_token %}</h3>
+    <hr>
+    <table border='1'>
+        <tr>
+            <td>재료</td>
+            <td>수량</td>
+            <td>유통기한(년.월.일)</td>
+        </tr>
+        {% for stock in stock_list %}
+        <tr>
+            <td>{{ stock.stock_name }}</td>
+            <td>{{ stock.stock_amount }}</td>
+            <td>{{ stock.stock_date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+  </body>
