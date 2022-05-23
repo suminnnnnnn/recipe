@@ -79,11 +79,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    },
-    'custom': { # thirdapp에서 사용할 데이터베이스 설정 추가
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # },
+    'default': { # thirdapp에서 사용할 데이터베이스 설정 추가
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'recipe',
         'USER': 'recipe',
