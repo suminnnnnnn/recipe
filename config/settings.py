@@ -32,7 +32,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+
     'recipe2',
+    'recipe1',
     'recipe',
     'member',
     'stockapp',
@@ -72,18 +74,18 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'config.wsgi.application'
+WSGI_APPLICATION = 'config.wsgi.application' 
 
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    },
-    'custom': { # thirdapp에서 사용할 데이터베이스 설정 추가
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # },
+    'default': { # thirdapp에서 사용할 데이터베이스 설정 추가
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'recipe',
         'USER': 'recipe',
@@ -92,7 +94,7 @@ DATABASES = {
         'PORT': 3306
     }
 }
-DATABASE_ROUTERS = ['stockapp.router.DBRouter']
+# DATABASE_ROUTERS = ['stockapp.router.DBRouter']
 
 
 # Password validation

@@ -14,19 +14,18 @@ class Add(models.Model):
     #user_name = models.CharField(max_length=10, null=True)
     Add_stock = CharField(max_length=10, null=True)
     Add_amount = CharField(max_length=4, null=True)
-    Add_month = CharField(max_length=20, null=True)
+    Add_month = DateField()
 
     class Meta:
         db_table = 'Add'
         app_label = 'stockapp'
 
 class Stock(models.Model):
-  stock_name = CharField(max_length=10, null=True)
-  stock_amount = CharField(max_length=4, null=True)
-  stock_month = CharField(max_length=20, null=True)
-  start_end_info = CharField(max_length=30)
-  cre_date = DateField()
-  class Meta:
-    db_table = 'stock'
+    stock_stock = models.CharField(max_length=10, null=True)
+    stock_amount = models.CharField(max_length=4, null=True)
+    stock_month = DateField()
+    class Meta:
+      db_table = 'Stock'
+      app_label = 'stockapp'
     # managed = False
 
