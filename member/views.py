@@ -27,3 +27,6 @@ def signup(request):
         form = UserForm()
     return render(request, 'member/signup.html', {'form': form})
 
+def check(request):
+    return render(request, 'background.html')
+

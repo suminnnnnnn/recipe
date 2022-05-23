@@ -17,6 +17,8 @@ urlpatterns = [
     path('signup/',views.signup,name='signup'),
     path('static/', views.static),
     path('index/',views.index),
-    path('home/',views.home)
+    path('home/',views.home),
+    path('check/',views.check)
+
    
 ]
