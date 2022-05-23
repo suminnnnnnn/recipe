@@ -92,7 +92,8 @@ DATABASES = {
         'PORT': 3306
     }
 }
-DATABASE_ROUTERS = ['stockapp.router.DBRouter']
+DATABASE_ROUTERS = ['stockapp.router.DBRouter', 'recipe2.router.DBRouter']
+
 
 
 # Password validation
