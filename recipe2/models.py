@@ -1,8 +1,13 @@
 from django.db import models
+from django.db.models.fields import CharField, URLField
 
 # Create your models here.
-class cookrecipe(models.Model):
-    recipe = models.CharField(max_length=100)
+class recipe(models.Model):
+    recipe = models.CharField(max_length=255)
     ingredient = models.CharField(max_length=255)
-    image_list = models.URLField(max_length=200, default ="")
+    image = models.URLField(max_length=255, default ="")
+
+    class Meta:
+        db_table = 'recipe'
+        managed = False
 

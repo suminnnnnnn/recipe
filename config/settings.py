@@ -94,7 +94,12 @@ DATABASES = {
         'PORT': 3306
     }
 }
+<<<<<<< HEAD
 # DATABASE_ROUTERS = ['stockapp.router.DBRouter']
+=======
+DATABASE_ROUTERS = ['stockapp.router.DBRouter', 'recipe2.router.DBRouter']
+
+>>>>>>> 8399fd3881bf46965ba531577823484854405a14
 
 
 # Password validation
@@ -145,5 +150,5 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/member/home'
-LOGOUT_REDIRECT_URL = '/member/login/'
+LOGOUT_REDIRECT_URL = '/member/home/'
 

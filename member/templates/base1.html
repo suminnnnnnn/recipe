@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}나의 냉장고 Recipe{% endblock %}</title>
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static "css/base.css" %}{% endblock %}" />
+<link rel="stylesheet" type="text/css" href="{% block extrastyle %}{% endblock %}" />
+</head>
+<body>
+    <div id="header">
+        <h2 class="maintitle">나의 냉장고  Recipe</h2>
+        <h4 class="welcome">
+            <a href='{% url "member:signup" %}'>회원가입</a>
+             <a href='{% url "member:login" %}'>로그인</a>
+        </h4>
+    </div>
+    <div id="menu">
+        <li><a href= '{% url "stockapp:add" %}' >나의 냉장고</a></li>
+        <li><a href= '{% url "recipe2:search" %}'>레시피 추천</a></li>
+        <li><a href="#">레시피</a></li>
+        <li><a href="#">마이페이지</a></li>
+    
+    </div>
+
+    {% block content %}{% endblock %}
+
+    {% block footer %}{% endblock %}
+   
+</body>
+</html>
