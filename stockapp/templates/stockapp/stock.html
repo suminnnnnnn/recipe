@@ -8,11 +8,11 @@
             <td>수량</td>
             <td>유통기한(년.월.일)</td>
         </tr>
-        {% for Add in Adds %}
+        {% for stock in stock_list %}
         <tr>
-            <td>{{ stock.Add_stock }}</td>
-            <td>{{ stock.Add_amount }}</td>
-            <td>{{ stock.Add_month }}</td>
+            <td>{{ stock.stock_stock }}</td>
+            <td>{{ stock.stock_amount }}</td>
+            <td>{{ stock.stock_month }}</td>
         </tr>
         {% endfor %}
     </table>
