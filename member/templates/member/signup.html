@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>IT_지마</title>
+    <title>zero_f</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="/static/boot/assets/favicon.ico" />
     <!-- Bootstrap Icons-->
@@ -37,7 +37,7 @@
         <div class="container my-3">
             <div class="row my-3">
                 <div class="col-4">
-                    <h4><span style="color:white">계정생성</span></h4>
+                    <h4><span style="color:white">SIGN UP</span></h4>
                 </div>
                
             </div>
@@ -46,31 +46,31 @@
                 {% include "form_errors.html" %}
 
                 <div class="form-group">
-                    <label for="username"><span style="color:white">사용자 ID</span></label>
+                    <label for="username"><span style="color:white">ID</span></label>
                     <input type="text" class="form-control" name="username" id="username"
                         value="{{ form.username.value | default_if_none:'' }}">
                 </div>
                 <br>
                 <div class="form-group">
-                    <label for="password1"><span style="color:white">비밀번호</span></label>
+                    <label for="password1"><span style="color:white">PASSWORD</span></label>
                     <input type="password" class="form-control" name="password1" id="password1"
                         value="{{ form.password1.value | default_if_none:'' }}">
                 </div>
                 <br>
                 <div class="form-group">
-                    <label for="password2"><span style="color:white">비밀번호 확인</span></label>
+                    <label for="password2"><span style="color:white">CONFIRM PASSWORD</span></label>
                     <input type="password" class="form-control" name="password2" id="password2"
                         value="{{ form.password2.value | default_if_none:'' }}">
                 </div>
                 <br>
                 <div class="form-group">
-                    <label for="email"><span style="color:white">이메일</span></label>
+                    <label for="email"><span style="color:white">E-MAIL</span></label>
                     <input type="text" class="form-control" name="email" id="email"
                         value="{{ form.email.value | default_if_none:'' }}">
                 </div>
                 
                 <br>
-                <button type="submit"  class="btn btn-primary btn-xl"><span >생성하기</span></button>
+                <button type="submit"  class="btn btn-primary btn-xl"><span >CREATE</span></button>
             </form>
         </div>
     </header>
