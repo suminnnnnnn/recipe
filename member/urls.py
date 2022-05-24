@@ -14,11 +14,9 @@ urlpatterns = [
         auth_views.LogoutView.as_view(),
         name='logout'
         ),
-    path('signup/',views.signup,name='signup'),
+    path('signup/',views.signup, name='signup'),
     path('static/', views.static),
-    path('index/',views.index),
-    path('home/',views.home),
+    path('index/',views.index,name='index'),
+    path('home/',views.home, name='home'),
     path('check/',views.check)
-
-   
-]
+    ]

@@ -1,6 +1,6 @@
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    </head>
+</head>
 {% extends "base2.html" %}
 {% block title %}search.html{% endblock %}
 {% block content %}
@@ -8,27 +8,30 @@
 <br>
 <form action="." method="post"> {% csrf_token %}
 
-        {{ form.as_table }} <!-- form을 테이블 형식으로 표시, 여기서 form은 views에서 넘겨준 PostSearchForm 객체임-->
-    <input type="submit" value="Submit" class="btn btn-light">
+    {{ form.as_table }}
+    <!-- form을 테이블 형식으로 표시, 여기서 form은 views에서 넘겨준 PostSearchForm 객체임-->
+    <input type="submit" value="Submit" class="btn btn-light" >
 
 </form>
 
-<br/><br/>
-{% comment %} 여기 부터 검색하면 나올 컨텐츠들 {% endcomment %}
+<br /><br />
+<!-- 여기 부터 검색하면 나올 컨텐츠들  -->
 <div class="row">
-{% if object_list %}
+    {% if object_list %}
     {% for post in object_list %}
     <div class="col-lg-4">
-        <img src ="{{post.image}}" alt="이미지 테두리" style="width:300px; height:300px; border:10px solid white"  >
+        <a href="{{ post.urls }}">
+        <img src="{{post.image}}" alt="이미지 테두리" style="width:400px; height:400px; border:8px solid white"></a>
         <h5>{{ post.recipe|slice:"2:-2" }}</h5>
-    <h6><a href="{{ post.urls }}">레시피 보러 가기</a></h6>
+        {% comment %} <h6><a href="{{ post.urls }}">레시피 보러 가기</a></h6> {% endcomment %}
     </div>
-        {% endfor %}    
-</div>        
-{% elif search_term %}<!-- 검색란이 공란인지 확인-->
-    <b><i>Search Word({{ search_term }}) Not Found</i></b>
+    {% endfor %}
+</div>
+{% elif search_term %}
+
+<!-- 검색란이 공란인지 확인-->
+<b><i>({{ search_term }}) 의 검색결과가 없어요 ಥ_ಥ </i></b>
 {% endif %}
 {% endblock %}
 </tr>
 </table>
-
