@@ -59,33 +59,21 @@
                                     <td class="col-lg bg-primary text-white-75">재료</td>
                                     <td class="col-lg bg-primary text-white-75">수량</td>
                                     <td class="col-lg bg-primary text-white-75">유통기한(년.월.일)</td>
-                                    <td class="col-lg bg-primary text-white-75">link</td>
+                                    <td class="col-lg bg-primary text-white-75">구매하러가기</td>
                                 </tr>
                             </thead>
                             {% for stock in stock_list %}
+                            
                             <tbody>
                                 <tr>
                                     <td class="col-lg bg-primary text-white-75">{{ stock.stock_stock }}</td>
                                     <td class="col-lg bg-primary text-white-75">{{ stock.stock_amount }}</td>
                                     <td class="col-lg bg-primary text-white-75">{{ stock.stock_month }}</td>
+                                    <td> <a class="col-lg bg-primary text-white-75" href="{{ stock.stock_urls }}">구매하러가기</a></td>
                                 </tr>
                             </tbody>
-                                {% comment %} <thead>
-                                    <tr>
-                                      <th>Firstname</th>
-                                      <th>Lastname</th>
-                                      <th>Email</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <tr>
-                                      <td>John</td>
-                                      <td>Doe</td>
-                                      <td>john@example.com</td>
-                                    </tr>
-                                    
-                                  </tbody> {% endcomment %}
                             {% endfor %}
+                    
                         </table>
                         {% comment %} <p class="text-white-75 mb-5">오늘 뭐 먹지?</p>
                         <a class="btn btn-primary btn-xl" href='{% url "stockapp:add" %}'>열려라 냉장고!</a>
