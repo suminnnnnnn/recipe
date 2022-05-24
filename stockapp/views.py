@@ -27,13 +27,18 @@ def add(request):
   return render(request, 'stockapp/add.html', {})
 
 def stock(request):
-
   stock_list = Stock.objects.filter(stock_user=User.objects.get(username=request.user.username))
-  return render(
-    request,
-    'stockapp/stock.html',
-    {'stock_list': stock_list}
-  )
+  return render(request,'stockapp/stock.html',{'stock_list': stock_list})
+
+
+# def stock(request):
+#   if (stock_user!=User.objects.get(username=request.user.username))
+#     return render(request,'member/login.html')
+#   else     
+#   stock_list = Stock.objects.filter(stock_user=User.objects.get(username=request.user.username))
+#   return render(request,'stockapp/stock.html',{'stock_list': stock_list})
+
+  
 # User.objects.get(username=request.user.username)
 
 
