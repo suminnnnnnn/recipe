@@ -1,0 +1,31 @@
+<html>
+
+<head>
+   
+</head>
+
+<body>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script type="text/javascript"> google.load("visualization", "1",
+                { packages: ["corechart"] }); google.setOnLoadCallback(drawChart); function drawChart() {
+                var data = google.visualization.arrayToDataTable
+                    ([["재료", "수량"], ["오이", 3], ["당근", 4], ["대파", 24],
+                     ["계란", 30], ]); 
+                     var options = { title: "냉장고 재료" }; 
+                     var chart = new google.visualization.PieChart(document.getElementById("employee_piechart"));
+                      chart.draw(data, options);
+            } 
+            <h1>Shop</h1>
+            <hr>
+            {% for stocks in stock_list %}
+            <h3>{{ stocks.stock_stock}} / {{ stocks.stock_amount }}</h3>
+            {% endfor %}
+    </script>
+    <div id="employee_piechart" style="width: 900px; height: 500px;"></div>
+
+    <hr>
+
+</body>
+
+</html>
