@@ -32,18 +32,14 @@
     </nav>
     <!-- Masthead-->
     <header class="masthead">
-        <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
+      
      
         <div class="container my-3">
             <div class="row my-3">
                 <div class="col-4">
                     <h4><span style="color:white">계정생성</span></h4>
                 </div>
-                <div class="col-8 text-right">
-                    <span style="color:white">또는 <a href="{% url 'member:login' %}"><span style="color:orange">로그인 하세요</span></a></span>
-                </div>
+               
             </div>
             <form method="post" class="post-form">
                 {% csrf_token %}
@@ -54,22 +50,27 @@
                     <input type="text" class="form-control" name="username" id="username"
                         value="{{ form.username.value | default_if_none:'' }}">
                 </div>
+                <br>
                 <div class="form-group">
                     <label for="password1"><span style="color:white">비밀번호</span></label>
                     <input type="password" class="form-control" name="password1" id="password1"
                         value="{{ form.password1.value | default_if_none:'' }}">
                 </div>
+                <br>
                 <div class="form-group">
                     <label for="password2"><span style="color:white">비밀번호 확인</span></label>
                     <input type="password" class="form-control" name="password2" id="password2"
                         value="{{ form.password2.value | default_if_none:'' }}">
                 </div>
+                <br>
                 <div class="form-group">
                     <label for="email"><span style="color:white">이메일</span></label>
                     <input type="text" class="form-control" name="email" id="email"
                         value="{{ form.email.value | default_if_none:'' }}">
                 </div>
-                <button type="submit" class="btn btn-primary"><span style="color:white">생성하기</span></button>
+                
+                <br>
+                <button type="submit"  class="btn btn-primary btn-xl"><span >생성하기</span></button>
             </form>
         </div>
     </header>
