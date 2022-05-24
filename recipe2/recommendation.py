@@ -11,21 +11,23 @@ def recommend_ingredient(my_stock):
     recommend_recipe_list = []
     this_stock = my_stock
     stock_list = []
+
     for stock in this_stock:
         stock_list.append(Stock.stock_stock)
-        print(stock_list)
+        print(stock_list) #재고에 있는 재료 리스트 뽑음
+
     for recipe in all_recipes:
         if not(recipe.ingredient):
             continue
         ss = recipe.ingredient.split(',')
         re_list = []
         for s in ss:
-            re_list.append(int(s))
+            re_list.append(s)
 
 # # 재고에 있는 재료를 모두 사용해서 만들 수 있는 요리부터 추천
         if len(re_list) != 0 and len(set(stock_list) - set(re_list)) == 0:
             if len(recommend_recipe_list) < 20:
-                recommend_recipe_list.append(recipe.reci)
+                recommend_recipe_list.append(recipe.recipe)
     if len(recommend_recipe_list) < 10:
         for recipe in all_recipes:
             if not (recipe.ingredient):
@@ -33,21 +35,21 @@ def recommend_ingredient(my_stock):
             ss = recipe.ingredient.split(',')
             re_list = []
             for s in ss:
-                re_list.append(int(s))
+                re_list.append(s)
             if len(re_list) != 0 and 0 < len(set(stock_list) - set(re_list)) < 2:  # and len(set(re_list) - set(stock_list)) < 10:
                 if len(recommend_recipe_list) < 20:
-                    recommend_recipe_list.append(recipe.reci)
+                    recommend_recipe_list.append(recipe.recipe)
     if len(recommend_recipe_list) < 10:
         for recipe in all_recipes:
             if not (recipe.ingredient):
                 continue
-            ss = recipe.ingredient_ids.split(',')
+            ss = recipe.ingredient.split(',')
             re_list = []
             for s in ss:
-                re_list.append(int(s))
+                re_list.append(s)
             if len(re_list) != 0 and 1 < len(set(stock_list) - set(re_list)) < 3:
                 if len(recommend_recipe_list) < 20:
-                    recommend_recipe_list.append(recipe.reci)
+                    recommend_recipe_list.append(recipe.recipe)
     result = {}
     result['ids'] = recommend_recipe_list
     return result
