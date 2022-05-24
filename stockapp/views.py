@@ -19,7 +19,7 @@ def add(request):
     url_all = url_start + Add_stock + url_end
     
     add = Add(Add_stock=Add_stock, Add_amount=Add_amount,Add_month=Add_month,Add_user=Member)
-    stock = Stock(stock_stock=Add_stock, stock_amount=Add_amount,stock_month=Add_month,stock_urls=url_all,user_user_id=Member)
+    stock = Stock(stock_stock=Add_stock, stock_amount=Add_amount,stock_month=Add_month,stock_urls=url_all,stock_user=Member)
     add.save()
     stock.save()
 
@@ -28,14 +28,13 @@ def add(request):
 
 def stock(request):
 
-   
-  stock_list = Stock.objects.filter(user_user_id=User.objects.get(username=request.user.username))
+  stock_list = Stock.objects.filter(stock_user=User.objects.get(username=request.user.username))
   return render(
     request,
     'stockapp/stock.html',
     {'stock_list': stock_list}
   )
-
+# User.objects.get(username=request.user.username)
 
 
 # from rest_framework.views import APIView
