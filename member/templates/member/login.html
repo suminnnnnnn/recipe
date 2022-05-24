@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>IT_지마</title>
+    <title>zero_f</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="/static/boot/assets/favicon.ico" />
     <!-- Bootstrap Icons-->
@@ -39,19 +39,19 @@
                 {% csrf_token %}
                 {% include "form_errors.html" %}
                 <div class="form-group">
-                    <label for="username"> <span style="color:white">사용자 ID</span></label>
+                    <label for="username"> <span style="color:white">ID</span></label>
                     <input type="text" class="form-control" name="username" id="username"
                         value="{{ form.username.value | default_if_none:'' }}">
                 </div>
                 <br>
                 <div class="form-group">
-                    <label for="password"><span style="color:white">비밀번호</span></label>
+                    <label for="password"><span style="color:white">PASSWORD</span></label>
                     <input type="password" class="form-control" name="password" id="password"
                         value="{{ form.password.value | default_if_none:'' }}">
                 </div>
 
                 <br>
-                <button type="submit" class="btn btn-primary btn-xl"><span style="color:white">로그인</span></button>
+                <button type="submit" class="btn btn-primary btn-xl"><span style="color:white">LOG IN</span></button>
                 
             </form>
 
