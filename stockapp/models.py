@@ -13,7 +13,12 @@ from member.models import Member
 
 class Add(models.Model):
   
+<<<<<<< HEAD
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+=======
+    Add_user = models.ForeignKey(User, on_delete=models.CASCADE)
+    # Add_username = CharField(max_length=10, null=True)
+>>>>>>> 4c48f16c4987597f2a9dfa2b66b7c10bb01512b7
     # user_name = models.CharField(max_length=10, null=True)
     Add_stock = CharField(max_length=10, null=True)
     Add_amount = CharField(max_length=4, null=True)
@@ -25,7 +30,11 @@ class Add(models.Model):
 
 class Stock(models.Model):
 
+<<<<<<< HEAD
     user_id = models.ForeignKey(User, on_delete=models.CASCADE, db_column='user_user_id')
+=======
+    stock_user = models.ForeignKey(User, on_delete=models.CASCADE,db_column='user_user_id')
+>>>>>>> 4c48f16c4987597f2a9dfa2b66b7c10bb01512b7
     stock_stock = models.CharField(max_length=10, null=True)
     stock_amount = models.CharField(max_length=4, null=True)
     stock_month = DateField()
@@ -35,14 +44,5 @@ class Stock(models.Model):
       app_label = 'stockapp'
     # managed = False
 
-# class Url(models.Model):
-#     url_stock = models.TextField()
-#     url_start = models.TextField()
-#     url_end = models.TextField()
-#     url_all = models.TextField()
-#     url_list = models.TextField()
-#     class Meta:
-#       db_table = 'Url'
-#       app_label = 'stockapp'
-#     # managed = False
+
 
