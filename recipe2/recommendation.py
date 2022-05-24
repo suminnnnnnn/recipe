@@ -4,8 +4,9 @@ from stockapp.models import Stock
 
 
 
-# 재료 기반 레시피 추천
+# # 재료 기반 레시피 추천
 def recommend_ingredient(my_stock):
+    global recipe
     all_recipes = recipe.objects.all()
     recommend_recipe_list = []
     this_stock = my_stock
@@ -21,7 +22,7 @@ def recommend_ingredient(my_stock):
         for s in ss:
             re_list.append(int(s))
 
-# 재고에 있는 재료를 모두 사용해서 만들 수 있는 요리부터 추천
+# # 재고에 있는 재료를 모두 사용해서 만들 수 있는 요리부터 추천
         if len(re_list) != 0 and len(set(stock_list) - set(re_list)) == 0:
             if len(recommend_recipe_list) < 20:
                 recommend_recipe_list.append(recipe.reci)
@@ -58,8 +59,8 @@ def recommend_random():
     shuffle(my_list)
     recommend_recipe_list = []
     for item in my_list[:20]:
-        print(item.reci_id)
-        recommend_recipe_list.append(item.reci_id)
+        print(item.recipe)
+        recommend_recipe_list.append(item.recipe)
     result = dict()
     result['ids'] = recommend_recipe_list
     return result

@@ -7,7 +7,7 @@ from recipe2.forms import PostSearchForm
 from django.db.models import Q
 from .models import recipe
 from stockapp.models import Stock
-from recipe2.recommendation import recommend_ingredient
+from recipe2.recommendation import recommend_random, recommend_ingredient
 
 
 
@@ -37,3 +37,10 @@ class RecipeStockAPIView(APIView):
         result_dict = recommend_ingredient(queryset)
         return Response(result_dict)
 
+class RandomAPIView(APIView):
+    serializer_class = RecipeSerializer
+
+    def get(self, request, *args, **kwargs):
+        result_dict = recommend_random()
+        print(result_dict)
+        return Response(result_dict)
