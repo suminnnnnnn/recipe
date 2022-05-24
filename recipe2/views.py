@@ -1,8 +1,15 @@
 from django.shortcuts import render,redirect
 from django.views.generic.edit import FormView
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from .serializers import RecipeSerializer
 from recipe2.forms import PostSearchForm
 from django.db.models import Q
 from .models import recipe
+from stockapp.models import Stock
+from recipe2.recommendation import recommend_random, recommend_ingredient
+
+
 
 
 class SearchFormView(FormView):
@@ -22,4 +29,18 @@ class SearchFormView(FormView):
         context['object_list'] = post_list
         return render(self.request, self.template_name, context)
 
+class RecipeStockAPIView(APIView):
+    serializer_class = RecipeSerializer
 
+    def get(self, request, *args, **kwargs):
+        queryset = Stock.objects.filter(user_id=request.user.id)
+        result_dict = recommend_ingredient(queryset)
+        return Response(result_dict)
+
+class RandomAPIView(APIView):
+    serializer_class = RecipeSerializer
+
+    def get(self, request, *args, **kwargs):
+        result_dict = recommend_random()
+        print(result_dict)
+        return Response(result_dict)
