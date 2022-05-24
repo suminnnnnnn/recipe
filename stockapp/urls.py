@@ -7,4 +7,4 @@ app_name = 'stockapp'
 urlpatterns = [
   path('add/', views.add, name='add'),
   path('stock/', views.stock, name='stock'),
-]
+  ]
