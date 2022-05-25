@@ -12,6 +12,7 @@ from .models import recipe
 from stockapp.models import Stock
 from recipe2.recommendation import recommend_random
 from django.forms import model_to_dict
+import random
 
 #레시피 검색
 class SearchFormView(FormView):
@@ -51,8 +52,12 @@ def recipeStock(request):
     for r in result:
         data = model_to_dict(r)
         data_list.append(data)
-
+    
+    def get(self, request, *args, **kwargs):
+        result_dict = recommend_random()
+        print(result_dict)
     result_dict = recommend_random()
+
     return render(
         request, 'recipe2/recommend.html', 
         {
@@ -60,47 +65,3 @@ def recipeStock(request):
             'result_dict': result_dict
         }
     )
-
-class RecipeStockAPIView(APIView):
-    serializer_class = RecipeSerializer
-    template_name = 'recommend.html'
-
-    def get(self, request):
-        all_stock = Stock.objects.filter(stock_user=request.user)
-        query = '''select * from recipe '''
-        sep = ''
-        prefix = 'where '
-        
-        for stock in all_stock:
-            재고 = stock.stock_stock
-            query += prefix + sep + "ingredient like '%%" + 재고 + "%%'"
-            sep = ' and '
-            prefix = ''
-
-        result = recipe.objects.raw(query)
-        # print(result)
-        data_list = []
-        for r in result:
-            data = model_to_dict(r)
-            data_list.append(data)
-
-        result_dict = recommend_random()
-
-
-        return Response(data_list, self.template_name)
-        return render
-
-
-#랜덤레시피추천
-
-class RandomAPIView(APIView):
-    serializer_class = RecipeSerializer
-    template_name = 'recommend.html'
-
-    def get(self, request, *args, **kwargs):
-        result_dict = recommend_random()
-        print(result_dict)
-
-  #      return Response(result_dict)
-        return Response({'randomrecipe': result_dict})
-
