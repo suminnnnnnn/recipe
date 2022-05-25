@@ -1,11 +1,13 @@
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 {% extends "base2.html" %}
 {% block title %}search.html{% endblock %}
 {% block content %}
-{% comment %} <h1>Recipe Search</h1> {% endcomment %}
+
 <br>
+
 <form action="." method="post"> {% csrf_token %}
 
     {{ form.as_table }}
@@ -14,7 +16,9 @@
 
 </form>
 
-<br /><br />
+<br />
+
+<br />
 <!-- 여기 부터 검색하면 나올 컨텐츠들  -->
 <div class="row">
     {% if object_list %}
@@ -28,6 +32,7 @@
     </div>
     {% endfor %}
 </div>
+
 {% elif search_term %}
 
 <!-- 검색란이 공란인지 확인-->
