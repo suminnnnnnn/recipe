@@ -37,5 +37,3 @@ class Stock(models.Model):
       app_label = 'stockapp'
     # managed = False
 
-
-
