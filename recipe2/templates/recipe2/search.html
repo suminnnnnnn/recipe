@@ -1,5 +1,13 @@
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;300;400&display=swap" rel="stylesheet">
+
+    <style>
+        .choi {font-family: 'IBM Plex Sans KR', sans-serif;}
+    </style>
+        
 </head>
 
 {% extends "base2.html" %}
@@ -7,8 +15,7 @@
 {% block content %}
 
 <br>
-
-<form action="." method="post"> {% csrf_token %}
+<form action="." method="post" class="choi"> {% csrf_token %}
 
     {{ form.as_table }}
     <!-- form을 테이블 형식으로 표시, 여기서 form은 views에서 넘겨준 PostSearchForm 객체임-->
@@ -27,7 +34,7 @@
         <a href="{{ post.urls }}">
         <img src="{{post.image}}" alt="이미지 테두리" style="width:300px; height:300px; border-radius: 15px;"></a>
         {% comment %} <h5>{{ post.recipe|slice:"2:-2" }}</h5> 대괄호랑 따옴표 빼기 {% endcomment %} 
-        <h5>{{ post.recipe }}</h5>
+        <h5 class="choi">{{ post.recipe }}</h5>
         {% comment %} <h6><a href="{{ post.urls }}">레시피 보러 가기</a></h6> {% endcomment %}
     </div>
     {% endfor %}

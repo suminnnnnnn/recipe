@@ -22,7 +22,12 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="/static/boot/css/styles1.css" rel="stylesheet" />
-    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;300;400&display=swap" rel="stylesheet">
+        <style>
+            .choi {font-family: 'IBM Plex Sans KR', sans-serif;}
+        </style>
     </head>
     <body>
         <!-- Navigation-->
@@ -37,9 +42,10 @@
                             <a class="nav-link" href="{% url 'member:logout' %}">{{ user.username }} (Logout)</a>
                             {% else %}
                             <a class="nav-link" href="{% url 'member:login' %}">LOG IN</a>
-                            <a class="nav-link" href='{% url "member:signup" %}'>SIGN UP</a></li>
+                            <li class="nav-item"><a class="nav-link" href='{% url "member:signup" %}'>SIGN UP</a></li>
                             {% endif %}
                         </li>
+                        
                         <li class="nav-item"><a class="nav-link" href='{% url "stockapp:stock" %}'>MY STOCK</a></li>
                     </ul>
                     
@@ -48,10 +54,10 @@
         </nav>
         <!-- Masthead-->
         
-        <header class="masthead">
+        <header class="masthead" >
             <div class="container px-4 px-lg-5 h-100">
                 <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
-                    <h1 class="text-white font-weight-bold">RECIPE SEARCH</h1>
+                    <h1 class="text-white font-weight-bold" >RECIPE SEARCH</h1>
                         <h2 class="content container">
                         {% comment %} <div class="row"> {% endcomment %}
                             <div style="text-allign:center">
