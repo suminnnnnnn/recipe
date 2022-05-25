@@ -1,5 +1,8 @@
 from ast import Add
+from asyncio.windows_events import NULL
+from operator import length_hint
 from ssl import MemoryBIO
+from django.forms import DateTimeField
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth.models import User
@@ -8,23 +11,30 @@ from .models import Add ,Stock
 
 
 def add(request):
-  if request.method == 'POST':
-    Member = User.objects.get(username=request.user.username)
-    
-    Add_stock = request.POST.get('Add_stock')
-    Add_amount = request.POST.get('Add_amount')
-    Add_month = request.POST.get('Add_month')
-    url_start = 'https://www.coupang.com/np/search?component=&q='
-    url_end = '&channel=user'
-    url_all = url_start + Add_stock + url_end
-    
-    add = Add(Add_stock=Add_stock, Add_amount=Add_amount,Add_month=Add_month,Add_user=Member)
-    stock = Stock(stock_stock=Add_stock, stock_amount=Add_amount,stock_month=Add_month,stock_urls=url_all,stock_user=Member)
-    add.save()
-    stock.save()
+  if request.user.is_authenticated:
+    if request.method == 'POST':
 
-    return render(request, 'stockapp/message.html',{}) 
-  return render(request, 'stockapp/add.html', {})
+      Member = User.objects.get(username=request.user.username)
+      
+      Add_stock = request.POST.get('Add_stock')
+      Add_amount = request.POST.get('Add_amount')
+      Add_month = request.POST.get('Add_month')
+      url_start = 'https://www.coupang.com/np/search?component=&q='
+      url_end = '&channel=user'
+      url_all = url_start + Add_stock + url_end
+      
+      if len(Add_month) == NULL:
+        return render(request, 'stockapp/add.html',{})
+      else:
+        add = Add(Add_stock=Add_stock, Add_amount=Add_amount,Add_month=Add_month,Add_user=Member)
+        stock = Stock(stock_stock=Add_stock, stock_amount=Add_amount,stock_month=Add_month,stock_urls=url_all,stock_user=Member)
+        add.save()
+        stock.save()
+
+        return render(request, 'stockapp/message.html',{}) 
+    return render(request, 'stockapp/add.html', {})
+  else:
+    return render(request,'member/login.html')
 
 # def stock(request):
 #   stock_list = Stock.objects.filter(stock_user=User.objects.get(username=request.user.username))
