@@ -10,7 +10,7 @@
 
     {{ form.as_table }}
     <!-- form을 테이블 형식으로 표시, 여기서 form은 views에서 넘겨준 PostSearchForm 객체임-->
-    <input type="submit" value="Submit" class="btn btn-light" >
+    <input type="submit" value="검색" class="btn btn-light" >
 
 </form>
 
@@ -19,9 +19,9 @@
 <div class="row">
     {% if object_list %}
     {% for post in object_list %}
-    <div class="col-lg-4">
+    <div class="col-lg-3">
         <a href="{{ post.urls }}">
-        <img src="{{post.image}}" alt="이미지 테두리" style="width:400px; height:400px; border:8px solid white"></a>
+        <img src="{{post.image}}" alt="이미지 테두리" style="width:300px; height:300px; border-radius: 15px;"></a>
         {% comment %} <h5>{{ post.recipe|slice:"2:-2" }}</h5> 대괄호랑 따옴표 빼기 {% endcomment %} 
         <h5>{{ post.recipe }}</h5>
         {% comment %} <h6><a href="{{ post.urls }}">레시피 보러 가기</a></h6> {% endcomment %}
