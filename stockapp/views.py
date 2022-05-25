@@ -52,7 +52,7 @@ def stock(request):
 def delete(request, stock_id):
     data = Stock.objects.get(id=stock_id)
     data.delete()
-    return render(request, 'stockapp/message.html',{}) 
+    return render(request, 'stockapp/message2.html',{}) 
 
 # User.objects.get(username=request.user.username)
 
