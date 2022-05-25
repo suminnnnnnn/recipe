@@ -5,26 +5,8 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;300;400&display=swap" rel="stylesheet">
 
     <style>
-        .돋움 {font-family: "돋움";}
-        .dotum {font-family: "dotum";}
-        .돋움체 {font-family: "돋움체";}
-        .dotumche {font-family: "dotumche";}
-        
-        .굴림 {font-family: "굴림";}
-        .gulim {font-family: "gulim";}
-        .굴림체 {font-family: "굴림체";}
-        .gulimche {font-family: "gulimche";}
-        
-        .고딕 {font-family: "고딕";}
-        .고딕체 {font-family: "고딕체";}
-        
-        .궁서 {font-family: "궁서";}
-        .궁서체 {font-family: "궁서체";}
-        
-        .times {font-family: times;}
-        .courier {font-family: courier;}
         .choi {font-family: 'IBM Plex Sans KR', sans-serif;}
-        </style>
+    </style>
         
 </head>
 {% extends "base2.html" %}
@@ -32,7 +14,7 @@
 {% block content %}
 {% comment %} <h1>Recipe Search</h1> {% endcomment %}
 <br>
-<form action="." method="post"> {% csrf_token %}
+<form action="." method="post" class="choi"> {% csrf_token %}
 
     {{ form.as_table }}
     <!-- form을 테이블 형식으로 표시, 여기서 form은 views에서 넘겨준 PostSearchForm 객체임-->
