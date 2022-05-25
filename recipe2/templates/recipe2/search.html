@@ -31,7 +31,7 @@
     {% if object_list %}
     {% for post in object_list %}
     <div class="col-lg-3">
-        <a href="{{ post.urls }}">
+        <a href="{{ post.urls }}" target="_blank">
         <img src="{{post.image}}" alt="이미지 테두리" style="width:300px; height:300px; border-radius: 15px;"></a>
         {% comment %} <h5>{{ post.recipe|slice:"2:-2" }}</h5> 대괄호랑 따옴표 빼기 {% endcomment %} 
         <h5 class="choi">{{ post.recipe }}</h5>
