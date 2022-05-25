@@ -27,6 +27,7 @@ class Add(models.Model):
 class Stock(models.Model):
 
     stock_user = models.ForeignKey(User, on_delete=models.CASCADE,db_column='user_user_id')
+    
     stock_stock = models.CharField(max_length=10, null=True)
     stock_amount = models.CharField(max_length=4, null=True)
     stock_month = DateField()

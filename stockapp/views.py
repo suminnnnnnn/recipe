@@ -26,19 +26,24 @@ def add(request):
     return render(request, 'stockapp/message.html',{}) 
   return render(request, 'stockapp/add.html', {})
 
-def stock(request):
-  stock_list = Stock.objects.filter(stock_user=User.objects.get(username=request.user.username))
-  return render(request,'stockapp/stock.html',{'stock_list': stock_list})
-
-
 # def stock(request):
-#   if (stock_user!=User.objects.get(username=request.user.username))
-#     return render(request,'member/login.html')
-#   else     
 #   stock_list = Stock.objects.filter(stock_user=User.objects.get(username=request.user.username))
 #   return render(request,'stockapp/stock.html',{'stock_list': stock_list})
 
-  
+
+def stock(request):
+  if request.user.is_authenticated:
+    stock_list = Stock.objects.filter(stock_user=User.objects.get(username=request.user.username))
+    return render(request,'stockapp/stock.html',{'stock_list': stock_list})
+  else:
+    return render(request,'member/login.html')
+
+
+def delete(request, stock_id):
+    data = Stock.objects.get(id=stock_id)
+    data.delete()
+    return render(request, 'stockapp/message2.html',{}) 
+
 # User.objects.get(username=request.user.username)
 
 
