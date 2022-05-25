@@ -59,6 +59,7 @@
                                     <td class="col-lg bg-primary text-white-75"><b>수량</b></td>
                                     <td class="col-lg bg-primary text-white-75"><b>유통기한</b></td>
                                     <td class="col-lg bg-primary text-white-75"><b>구매하러가기</b></td>
+                                    <td class="col-lg bg-primary text-white-75"><b>삭제</b></td>
                                 </tr>
                             </thead>
                             {% for stock in stock_list %}
@@ -69,6 +70,10 @@
                                     <td class="col-lg bg-white text-black-75">{{ stock.stock_amount }}</td>
                                     <td class="col-lg bg-white text-black-75">{{ stock.stock_month }}</td>
                                     <td> <a class="col-lg bg-white text-black-75" href="{{ stock.stock_urls }}">구매하러가기</a></td>
+                                    <td> <a class="col-lg bg-white text-black-75" href="delete/{{ stock.id }}">삭제</a></td>
+                                    
+
+
 
                                 </tr>
                             </tbody>
