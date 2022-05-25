@@ -35,7 +35,6 @@
                             {% endif %}
                         </li>
                         
-                        <li class="nav-item"><a class="nav-link" href='{% url "member:signup" %}'>SIGN UP</a></li>
                     </ul>
                     
                 </div>
@@ -71,15 +70,12 @@
                                     <td class="col-lg bg-white text-black-75">{{ stock.stock_month }}</td>
                                     <td> <a class="col-lg bg-white text-black-75" href="{{ stock.stock_urls }}">구매하러가기</a></td>
                                     <td> <a class="col-lg bg-white text-black-75" href="delete/{{ stock.id }}">삭제</a></td>
-                                    
-
-
-
                                 </tr>
                             </tbody>
                             {% endfor %}
                     
                         </table>
+                        <a class="btn btn-primary btn-xl" href='{% url "stockapp:add" %}'>재료 추가</a>
                         {% comment %} <p class="text-white-75 mb-5">오늘 뭐 먹지?</p>
                         <a class="btn btn-primary btn-xl" href='{% url "stockapp:add" %}'>열려라 냉장고!</a>
                         <a class="btn btn-primary btn-xl" href='{% url "recipe2:search" %}'>열려라 레시피!</a> {% endcomment %}
