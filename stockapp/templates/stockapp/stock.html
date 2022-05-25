@@ -65,11 +65,11 @@
                             
                             <tbody>
                                 <tr>
-                                    <td class="col-lg bg-lightsalmon text-black-75">{{ stock.stock_stock }}</td>
+                                    <td class="col-lg bg-white text-black-75">{{ stock.stock_stock }}</td>
                                     <td class="col-lg bg-white text-black-75">{{ stock.stock_amount }}</td>
                                     <td class="col-lg bg-white text-black-75">{{ stock.stock_month }}</td>
-                                    <td> <a class="col-lg bg-white text-black-75" href="{{ stock.stock_urls }}">구매하러가기</a></td>
-                                    <td> <a class="col-lg bg-white text-black-75" href="delete/{{ stock.id }}">삭제</a></td>
+                                    <td class="col-lg bg-white text-black-75"> <a class="col-lg bg-white text-black-75" href="{{ stock.stock_urls }}">구매하러가기</a></td>
+                                    <td class="col-lg bg-white text-black-75"> <a class="col-lg bg-white text-black-75" href="delete/{{ stock.id }}">삭제</a></td>
                                 </tr>
                             </tbody>
                             {% endfor %}
